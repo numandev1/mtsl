@@ -1,0 +1,36 @@
+{
+  "name": "mtsl",
+  "version": "0.0.1",
+  "description": "Replaces npm link with something that actually works!",
+  "scripts": {
+    "test": ":",
+    "prepublish": ":",
+    "build": ":",
+    "release": "npm install wnpm-ci --no-save && wnpm-release -- --no-shrinkwrap",
+    "patch": "(npm version patch) && (npm publish) && (git push) && (git push --tags)"
+  },
+  "bin": {
+    "mtsl": "./src/cli/index.js"
+  },
+  "author": "nomi9995 <muhammadnuman70@gmail.com> (http://www.github.com/nomi9995)",
+  "license": "MIT",
+  "preferGlobal": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nomi9995/mtsl.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nomi9995/mtsl/issues"
+  },
+  "homepage": "https://github.com/nomi9995/mtsl#readme",
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.0.4",
+    "eslint": "^4.18.2"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}
