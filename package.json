@@ -10,7 +10,7 @@
     "patch": "(npm version patch) && (npm publish) && (git push) && (git push --tags)"
   },
   "bin": {
-    "mtsl": "./src/cli/index.js"
+    "mtsl": "./bin/cli.js"
   },
   "author": "nomi9995 <muhammadnuman70@gmail.com> (http://www.github.com/nomi9995)",
   "license": "MIT",
@@ -24,7 +24,8 @@
   },
   "homepage": "https://github.com/nomi9995/mtsl#readme",
   "dependencies": {
-    
+    "commander": "^5.1.0",
+    "esm": "^3.2.25"
   },
   "devDependencies": {
     "babel-eslint": "^6.0.4",
