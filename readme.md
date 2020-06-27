@@ -100,6 +100,20 @@ In the following example we are ignoring the ".git" and "node_modules" folders:
 
 See the [Contributing page](CONTRIBUTING.md).
 
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/nomi9995"><img src="https://avatars3.githubusercontent.com/u/36044436?s=460&u=c7471cd9ccec793c7a0fccc7db475a577ff7969d&v=4" width="100px;" alt="Numan"/><br /><sub><b>Numan</b></sub></a><br /><a href="#infra-Numan" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/nomi9995/mtsl/commits?author=nomi9995" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
 ## License
 
 Copyright (c) 2020 Nomi9995. Licensed under the MIT license.
