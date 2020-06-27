@@ -43,5 +43,14 @@
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
-  }
+  },
+  "keywords": [
+    "symlink",
+    "symboliclink",
+    "symlinks",
+    "copy",
+    "watcher",
+    "tangible",
+    "tangible symlink"
+  ]
 }
