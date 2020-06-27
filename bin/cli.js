@@ -18,9 +18,9 @@ program
   .command('add')
   .description('run setup commands for all envs')
   .option('-s, --src <src>', 'source path')
-  .option('-d, --desc <desc>', 'destination path')
+  .option('-d, --dest <dest>', 'destination path')
   .option('-sp, --skip-prompt <skip>', 'Skips the prompt asking to setup ignored folders',false)
-  .action(({ src, desc,skip }) => add( src, desc,skip ))
+  .action(({ src, dest,skip }) => add( src, dest,skip ))
 
 program
   .command('remove [id]')

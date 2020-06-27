@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/nomi9995/mtsl#readme",
   "dependencies": {
+    "chokidar": "^3.4.0",
     "colors": "^1.4.0",
     "columnify": "^1.5.4",
     "commander": "^5.1.0",

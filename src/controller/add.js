@@ -5,13 +5,11 @@ var fs = require('fs-extra');
 var path = require('path');
 var links = require('../utils/links');
 
-const add = (src, desc, skip) => {
-	console.log(src, desc, 'ssss');
-
+const add = (src, dest, skip) => {
 	links.load();
 	var i,
 		src = path.resolve(untildify(src)),
-		dest = path.resolve(untildify(desc));
+		dest = path.resolve(untildify(dest));
 
 	for (i in links.data) {
 		if (links.data[i].src === src && links.data[i].dest === dest) {
