@@ -3,11 +3,7 @@
   "version": "0.0.1",
   "description": "Replaces npm link with something that actually works!",
   "scripts": {
-    "test": ":",
-    "prepublish": ":",
-    "build": ":",
-    "release": "npm install wnpm-ci --no-save && wnpm-release -- --no-shrinkwrap",
-    "patch": "(npm version patch) && (npm publish) && (git push) && (git push --tags)"
+    "pretty": "prettier --config ./.prettierrc.json --write \"src/**/*.js\""
   },
   "bin": {
     "mtsl": "./bin/cli.js"
@@ -31,11 +27,18 @@
     "fs-extra": "^9.0.1",
     "inquirer": "^7.2.0",
     "is-there": "^4.5.0",
+    "prettier": "^2.0.5",
     "untildify": "^4.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^6.0.4",
-    "eslint": "^4.18.2"
+    "eslint": "^4.18.2",
+    "husky": "^4.2.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run pretty"
+    }
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
