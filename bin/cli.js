@@ -7,6 +7,7 @@ const {add} = require('../src/controller/add');
 const {remove} = require('../src/controller/remove');
 const {list} = require('../src/controller/list');
 const {removeall} = require('../src/controller/removeall');
+const {start} = require('../src/controller/start');
 
 program
   .storeOptionsAsProperties(true)
@@ -18,21 +19,27 @@ program
   .description('run setup commands for all envs')
   .option('-s, --src <src>', 'source path')
   .option('-d, --desc <desc>', 'destination path')
-  .action(({ src, desc }) => add( src, desc ))
+  .option('-sp, --skip-prompt <skip>', 'Skips the prompt asking to setup ignored folders',false)
+  .action(({ src, desc,skip }) => add( src, desc,skip ))
 
 program
   .command('remove [id]')
-  .description('run setup commands for all envs')
+  .description('remove link by id')
   .action((id) => remove(id))
 
   program
   .command('list')
-  .description('run setup commands for all envs')
+  .description('show list of link')
   .action(list)
 
   program
   .command('removeall')
-  .description('run setup commands for all envs')
+  .description('remove all link')
   .action(removeall)
+
+  program
+  .command('start [id]')
+  .description('start link by id')
+  .action((id) => start(id))
 
 program.parse(process.argv)

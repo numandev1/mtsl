@@ -24,8 +24,14 @@
   },
   "homepage": "https://github.com/nomi9995/mtsl#readme",
   "dependencies": {
+    "colors": "^1.4.0",
+    "columnify": "^1.5.4",
     "commander": "^5.1.0",
-    "esm": "^3.2.25"
+    "esm": "^3.2.25",
+    "fs-extra": "^9.0.1",
+    "inquirer": "^7.2.0",
+    "is-there": "^4.5.0",
+    "untildify": "^4.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^6.0.4",

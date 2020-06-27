@@ -1,5 +1,5 @@
 node_modules
-src/links.json
+src/utils/links.json
 *.log*
 yarn.lock
 package-lock.json
