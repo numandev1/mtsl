@@ -41,8 +41,8 @@
       "pre-commit": "npm run pretty && git add ."
     }
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+  "publishConfig": { 
+    "registry":"https://npm.pkg.github.com/"
   },
   "keywords": [
     "symlink",
