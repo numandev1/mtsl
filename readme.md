@@ -5,7 +5,7 @@ Mtsl listens to changes in some folder (using [Chokidar](https://www.npmjs.com/p
 ## Working
 Actually, it is watcher **CLI** that copy files from source to destination
 
-## Why Mtsl not other package?
+## Why Mtsl not other packages?
 There are other tangible symlink packages available but every package has so many bugs. famous package is [wml](https://github.com/wix/wml) but that have many bugs. This package is working as required
 
 Let's face it, sometimes symbolic links just aren't enough. Github has more than [10K issues](https://github.com/search?utf8=✓&q=support+for+symlinks&type=Issues) with the words "support for symlinks" in them. 
@@ -30,7 +30,7 @@ mtsl add -s ~/source-dir -d ~/User/destination-dir
 ###### output
 Added link: (0) /Users/username/source-dir -> /Users/username/User/destination-dir
 ```
-# above command will give you link id what will use in start watching link that is added
+# above command will give you link id what will use to start watching link that is added
 mtsl start 0
 ```
 
