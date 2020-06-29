@@ -15,19 +15,19 @@ const start = (id) => {
 				if (isAllowedThisPath(eventPath, link))
 					switch (event) {
 						case 'change':
-							addOrChange(eventPath, link);
+							addOrChange(eventPath, link, 'CHANGE');
 							break;
 						case 'add':
-							addOrChange(eventPath, link);
+							addOrChange(eventPath, link, 'ADD');
 							break;
 						case 'addDir':
-							addDir(eventPath, link);
+							addDir(eventPath, link, 'ADD DIR');
 							break;
 						case 'unlink':
-							unlinkOrUnlinkDir(eventPath, link);
+							unlinkOrUnlinkDir(eventPath, link, 'DELETE');
 							break;
 						case 'unlinkDir':
-							unlinkOrUnlinkDir(eventPath, link);
+							unlinkOrUnlinkDir(eventPath, link, 'DELETE DIR');
 							break;
 					}
 			});
@@ -73,8 +73,25 @@ const isAllowedThisPath = (eventPath, link) => {
 	return true;
 };
 
-const logSrcDest = (src, dest) => {
-	console.log(src.green, '-->', dest.green);
+const logSrcDest = (src, dest, eventType) => {
+	let color = 'green';
+	switch (eventType) {
+		case 'CHANGE':
+			color = 'yellow';
+			break;
+
+		case 'ADD':
+		case 'ADD DIR':
+			color = 'green';
+			break;
+
+		case 'DELETE':
+		case 'DELETE DIR':
+			color = 'red';
+			break;
+	}
+
+	console.log(`[${eventType}] `, src[color], '-->', dest[color]);
 };
 
 const getDestinationPath = (eventPath, link) => {
@@ -83,22 +100,22 @@ const getDestinationPath = (eventPath, link) => {
 	return destinationAbsolutePath;
 };
 
-const addOrChange = (eventPath, link) => {
+const addOrChange = (eventPath, link, eventType) => {
 	const destinationPath = getDestinationPath(eventPath, link);
 	fs.copySync(eventPath, destinationPath);
-	logSrcDest(eventPath, destinationPath);
+	logSrcDest(eventPath, destinationPath, eventType);
 };
 
-const addDir = (eventPath, link) => {
+const addDir = (eventPath, link, eventType) => {
 	const destinationPath = getDestinationPath(eventPath, link);
 	fs.mkdirsSync(destinationPath);
-	logSrcDest(eventPath, destinationPath);
+	logSrcDest(eventPath, destinationPath, eventType);
 };
 
-const unlinkOrUnlinkDir = (eventPath, link) => {
+const unlinkOrUnlinkDir = (eventPath, link, eventType) => {
 	const destinationPath = getDestinationPath(eventPath, link);
 	fs.removeSync(destinationPath);
-	logSrcDest(eventPath, destinationPath);
+	logSrcDest(eventPath, destinationPath, eventType);
 };
 
 export {start};
