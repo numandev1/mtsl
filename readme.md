@@ -37,6 +37,12 @@ Added link: (0) /Users/username/source-dir -> /Users/username/User/destination-d
 # above command will give you link id what will use to start watching link that is added
 mtsl start 0
 ```
+## OR
+ make start symlink without add link
+```sh
+# it is same as `mtsl start` but it starts to make symlink without adding the link
+mtsl startwithoutadd -s <src> -d <dest>
+````
 
 ## Commands
 
