@@ -73,6 +73,14 @@ Starts mtsl.
 
 It first copies all watched files from source to destination folder and then waits for new changes to happen.
 
+#### startwithoutadd
+
+`mtsl startwithoutadd -s <src> -d <dest>`
+
+Starts mtsl without add link.
+
+it is same as `mtsl start` but it starts to make symlink without adding the link.
+
 #### list
 
 `mtsl list`
