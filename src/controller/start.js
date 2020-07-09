@@ -4,36 +4,49 @@ var fs = require('fs-extra');
 const chokidar = require('chokidar');
 const path = require('path');
 
-const start = (id) => {
-	if (id) {
-		links.load();
-		const link = links.data[id];
-		if (!link) {
-			console.error(`Error: could not find link ${id}`);
+//isStartwithoutadd will be true if user start by mtsl startwithoutadd
+//linkObject will receive data when user start by mtsl startwithoutadd
+
+const start = (id, isStartwithoutadd = false, linkObject = {}) => {
+	try {
+		if (id) {
+			let link = {};
+			if (isStartwithoutadd) {
+				link = linkObject;
+			} else {
+				links.load();
+				link = links.data[id];
+			}
+
+			if (!link) {
+				console.error(`Error: could not find link ${id}`);
+			} else {
+				chokidar.watch(link.src).on('all', (event, eventPath) => {
+					if (isAllowedThisPath(eventPath, link))
+						switch (event) {
+							case 'change':
+								addOrChange(eventPath, link, 'CHANGE');
+								break;
+							case 'add':
+								addOrChange(eventPath, link, 'ADD');
+								break;
+							case 'addDir':
+								addDir(eventPath, link, 'ADD DIR');
+								break;
+							case 'unlink':
+								unlinkOrUnlinkDir(eventPath, link, 'DELETE');
+								break;
+							case 'unlinkDir':
+								unlinkOrUnlinkDir(eventPath, link, 'DELETE DIR');
+								break;
+						}
+				});
+			}
 		} else {
-			chokidar.watch(link.src).on('all', (event, eventPath) => {
-				if (isAllowedThisPath(eventPath, link))
-					switch (event) {
-						case 'change':
-							addOrChange(eventPath, link, 'CHANGE');
-							break;
-						case 'add':
-							addOrChange(eventPath, link, 'ADD');
-							break;
-						case 'addDir':
-							addDir(eventPath, link, 'ADD DIR');
-							break;
-						case 'unlink':
-							unlinkOrUnlinkDir(eventPath, link, 'DELETE');
-							break;
-						case 'unlinkDir':
-							unlinkOrUnlinkDir(eventPath, link, 'DELETE DIR');
-							break;
-					}
-			});
+			console.log('Please specfic id of link which you want to start'.red);
 		}
-	} else {
-		console.log('Please specfic id of link which you want to start'.red);
+	} catch (error) {
+		console.log('something went wrong'.red);
 	}
 };
 
