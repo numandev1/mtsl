@@ -12,7 +12,7 @@ Actually, it is watcher **CLI** that copy files from source to destination
 ## Why Mtsl not other packages?
 There are other tangible symlink packages available but every package has so many bugs. famous package is [wml](https://github.com/wix/wml) but that have many bugs. This package is working as required
 
-Let's face it, sometimes symbolic links just aren't enough. Github has more than [10K issues](https://github.com/search?utf8=✓&q=support+for+symlinks&type=Issues) with the words "support for symlinks" in them. 
+Let's face it, sometimes symbolic links just aren't enough. Github has more than [80K issues](https://github.com/search?utf8=✓&q=support+for+symlinks&type=Issues) with the words "support for symlinks" in them. 
 
 
 Mtsl is a CLI tool that works pretty much like `ln -s [src] [dest]`. You first set up your links by using the `mtsl add -s [src] -d [dest]` command and then run the mtsl service (`mtsl start <linkId>`) to start listening. link index can be get from `mtsl list` That's it!

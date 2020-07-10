@@ -42,7 +42,7 @@ program
 
 program
   .command('startwithoutadd')
-  .description('start link by id')
+  .description('start link without add link')
   .option('-s, --src <src>', 'source path')
   .option('-d, --dest <dest>', 'destination path')
   .action(({ src, dest }) =>
