@@ -1,3 +1,9 @@
+### Would you like to support me?
+
+<a href="https://www.buymeacoffee.com/numan.dev" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+
+---
+
 <p align="center">
 <img src="/media/demo.gif" height="450"/>
 </p>
