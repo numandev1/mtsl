@@ -26,3 +26,16 @@ jobs:
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
+      - name: Make PR for Incremented Build Number
+        continue-on-error: true
+        uses: peter-evans/create-pull-request@v3
+        with:
+          branch: 'chore/increase_version'
+          delete-branch: true
+          base: master
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore: increment version number'
+          title: 'chore: increment version number'
+          body: 'chore: increment version number'
+          assignees: 'numandev1'
+
